@@ -19,7 +19,7 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 
 	@Override
 	protected Module createModule() {
-		return super.createModule().setDefaultFunction(null);
+		return super.createModule().setDefaultFunction(FUNC_MODULES_MGR);
 	}
 
 	@Override
@@ -37,7 +37,10 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 		return singleton(SettingsUrlsFactory.class);
 	}
 
+	public final WebModuleFunction FUNC_MODULES_MGR = (WebModuleFunction) new WebModuleFunction()
+			.setUrl(getUrlsFactory().getModulesMgrUrl())
+			.setName(MODULE_NAME + "-ContextModuleMgrPage").setText($m("SettingsWebContext.0"));
 	public final WebModuleFunction FUNC_MY_SETTINGS = (WebModuleFunction) new WebModuleFunction()
 			.setUrl(getUrlsFactory().getMyPreferencesUrl()).setName(MODULE_NAME + "-MySettingsTPage")
-			.setText($m("SettingsContext.1")).setDisabled(true);
+			.setText($m("SettingsWebContext.1")).setDisabled(true);
 }
