@@ -1,7 +1,7 @@
-.ContextModuleMgrPage>div {
+.ModuleContextMgrPage>div {
 	margin: 10px 0;
 	-webkit-box-shadow: 5px 5px 5px #aaa;
 	-moz-box-shadow: 5px 5px 5px #aaa;
 	box-shadow: 5px 5px 5px #aaa;
-	width: 75%;
+	width: 85%;
 }

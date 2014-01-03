@@ -39,7 +39,7 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 
 	public final WebModuleFunction FUNC_MODULES_MGR = (WebModuleFunction) new WebModuleFunction()
 			.setUrl(getUrlsFactory().getModulesMgrUrl())
-			.setName(MODULE_NAME + "-ContextModuleMgrPage").setText($m("SettingsWebContext.0"));
+			.setName(MODULE_NAME + "-ModuleContextMgrPage").setText($m("SettingsWebContext.0"));
 	public final WebModuleFunction FUNC_MY_SETTINGS = (WebModuleFunction) new WebModuleFunction()
 			.setUrl(getUrlsFactory().getMyPreferencesUrl()).setName(MODULE_NAME + "-MySettingsTPage")
 			.setText($m("SettingsWebContext.1")).setDisabled(true);
