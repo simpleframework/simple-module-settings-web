@@ -33,7 +33,7 @@ public abstract class AbstractSettingsMgrPage extends T1ResizedTemplatePage impl
 	@Override
 	public TabButtons getTabButtons(final PageParameter pp) {
 		return TabButtons.of(new TabButton($m("SettingsWebContext.0")).setHref(getUrlsFactory()
-				.getModulesMgrUrl()));
+				.getUrl(pp, ModuleContextMgrPage.class)));
 	}
 
 	protected SettingsUrlsFactory getUrlsFactory() {

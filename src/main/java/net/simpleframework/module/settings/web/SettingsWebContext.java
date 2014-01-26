@@ -4,6 +4,8 @@ import static net.simpleframework.common.I18n.$m;
 import net.simpleframework.ctx.Module;
 import net.simpleframework.ctx.ModuleFunctions;
 import net.simpleframework.module.settings.impl.SettingsContext;
+import net.simpleframework.module.settings.web.page.MySettingsTPage;
+import net.simpleframework.module.settings.web.page.t1.ModuleContextMgrPage;
 import net.simpleframework.mvc.PageParameter;
 import net.simpleframework.mvc.common.element.AbstractElement;
 import net.simpleframework.mvc.common.element.LinkElement;
@@ -38,9 +40,10 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 	}
 
 	public final WebModuleFunction FUNC_MODULES_MGR = (WebModuleFunction) new WebModuleFunction()
-			.setUrl(getUrlsFactory().getModulesMgrUrl())
+			.setUrl(getUrlsFactory().getUrl(null, ModuleContextMgrPage.class))
 			.setName(MODULE_NAME + "-ModuleContextMgrPage").setText($m("SettingsWebContext.0"));
 	public final WebModuleFunction FUNC_MY_SETTINGS = (WebModuleFunction) new WebModuleFunction()
-			.setUrl(getUrlsFactory().getMyPreferencesUrl()).setName(MODULE_NAME + "-MySettingsTPage")
-			.setText($m("SettingsWebContext.1")).setDisabled(true);
+			.setUrl(getUrlsFactory().getUrl(null, MySettingsTPage.class))
+			.setName(MODULE_NAME + "-MySettingsTPage").setText($m("SettingsWebContext.1"))
+			.setDisabled(true);
 }

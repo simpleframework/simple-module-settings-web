@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.simpleframework.module.settings.ISettingsContextAware;
 import net.simpleframework.module.settings.web.ISettingsWebContext;
+import net.simpleframework.module.settings.web.page.MySettingsTPage;
 import net.simpleframework.mvc.PageParameter;
 import net.simpleframework.mvc.template.t2.T2TemplatePage;
 
@@ -19,7 +20,7 @@ public class MySettingsPage extends T2TemplatePage implements ISettingsContextAw
 	@Override
 	protected String toHtml(final PageParameter pp, final Map<String, Object> variables,
 			final String currentVariable) throws IOException {
-		return pp.includeUrl(((ISettingsWebContext) context).getUrlsFactory()
-				.getMyPreferences_IncludePage());
+		return pp.includeUrl(((ISettingsWebContext) context).getUrlsFactory().getUrl(pp,
+				MySettingsTPage.class));
 	}
 }

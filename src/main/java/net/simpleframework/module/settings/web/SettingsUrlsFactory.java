@@ -3,7 +3,6 @@ package net.simpleframework.module.settings.web;
 import net.simpleframework.module.settings.web.page.MySettingsTPage;
 import net.simpleframework.module.settings.web.page.t1.ModuleContextMgrPage;
 import net.simpleframework.module.settings.web.page.t2.MySettingsPage;
-import net.simpleframework.mvc.AbstractMVCPage;
 import net.simpleframework.mvc.common.UrlsCache;
 
 /**
@@ -14,15 +13,9 @@ import net.simpleframework.mvc.common.UrlsCache;
  */
 public class SettingsUrlsFactory extends UrlsCache {
 
-	public String getModulesMgrUrl() {
-		return AbstractMVCPage.url(ModuleContextMgrPage.class);
-	}
+	public SettingsUrlsFactory() {
+		put(ModuleContextMgrPage.class);
 
-	public String getMyPreferencesUrl() {
-		return AbstractMVCPage.url(MySettingsPage.class);
-	}
-
-	public Class<? extends MySettingsTPage> getMyPreferences_IncludePage() {
-		return MySettingsTPage.class;
+		put(MySettingsTPage.class, MySettingsPage.class);
 	}
 }
