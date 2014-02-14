@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.simpleframework.ado.query.IDataQuery;
-import net.simpleframework.ado.query.ListDataObjectQuery;
+import net.simpleframework.ado.query.ListDataQuery;
 import net.simpleframework.common.BeanUtils;
 import net.simpleframework.ctx.IModuleContext;
 import net.simpleframework.ctx.Module;
@@ -67,8 +67,8 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 
 		@Override
 		public IDataQuery<?> createDataObjectQuery(final ComponentParameter cp) {
-			final ListDataObjectQuery<Map<String, Object>> dq = new ListDataObjectQuery<Map<String, Object>>();
-			final List<Map<String, Object>> coll = dq.getList();
+			final ListDataQuery<Map<String, Object>> dq = new ListDataQuery<Map<String, Object>>();
+			final List<Map<String, Object>> coll = dq.list();
 			for (final IModuleContext ctx : ModuleContextFactory.allModules()) {
 				final Module module = ctx.getModule();
 				final Map<String, Object> map = BeanUtils.toMap(module);
