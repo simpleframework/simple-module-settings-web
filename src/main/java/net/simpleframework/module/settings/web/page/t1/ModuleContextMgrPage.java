@@ -37,7 +37,7 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 		final TablePagerBean tablePager = (TablePagerBean) addComponentBean(pp,
 				"ModuleContextMgrPage_tbl", TablePagerBean.class)
 				.setPagerBarLayout(EPagerBarLayout.none).setContainerId("idModuleContextMgrPage_tbl")
-				.setHandleClass(ContextModuleTable.class);
+				.setHandlerClass(ContextModuleTable.class);
 		tablePager
 				.addColumn(
 						new TablePagerColumn("name", "ID", 180).setTextAlign(ETextAlign.left).setSort(
