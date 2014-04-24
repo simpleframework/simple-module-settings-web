@@ -48,8 +48,8 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 				.addColumn(new TablePagerColumn("version", $m("ModuleContextMgrPage.1"), 55))
 				.addColumn(new TablePagerColumn("order", $m("ModuleContextMgrPage.2"), 65))
 				.addColumn(
-						new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3")).setTextAlign(
-								ETextAlign.left).setSort(false))
+						new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3"))
+								.setTextAlign(ETextAlign.left).setSort(false))
 				.addColumn(TablePagerColumn.OPE().setWidth(80));
 	}
 
