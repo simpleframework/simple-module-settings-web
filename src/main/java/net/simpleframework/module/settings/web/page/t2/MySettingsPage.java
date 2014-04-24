@@ -20,7 +20,7 @@ public class MySettingsPage extends T2TemplatePage implements ISettingsContextAw
 	@Override
 	protected String toHtml(final PageParameter pp, final Map<String, Object> variables,
 			final String currentVariable) throws IOException {
-		return pp.includeUrl(((ISettingsWebContext) context).getUrlsFactory().getUrl(pp,
+		return pp.includeUrl(((ISettingsWebContext) settingsContext).getUrlsFactory().getUrl(pp,
 				MySettingsTPage.class));
 	}
 }

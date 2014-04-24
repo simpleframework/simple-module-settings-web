@@ -48,7 +48,7 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 				.addColumn(new TablePagerColumn("version", $m("ModuleContextMgrPage.1"), 55))
 				.addColumn(new TablePagerColumn("order", $m("ModuleContextMgrPage.2"), 65))
 				.addColumn(
-						new TablePagerColumn("context", $m("ModuleContextMgrPage.3")).setTextAlign(
+						new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3")).setTextAlign(
 								ETextAlign.left).setSort(false))
 				.addColumn(TablePagerColumn.OPE().setWidth(80));
 	}
@@ -72,7 +72,7 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 			for (final IModuleContext ctx : ModuleContextFactory.allModules()) {
 				final Module module = ctx.getModule();
 				final Map<String, Object> map = BeanUtils.toMap(module);
-				map.put("context", ctx.getClass().getName());
+				map.put("settingsContext", ctx.getClass().getName());
 				coll.add(map);
 			}
 			return dq;

@@ -27,7 +27,7 @@ public abstract class AbstractSettingsMgrPage extends T1ResizedTemplatePage impl
 
 	@Override
 	public String getRole(final PageParameter pp) {
-		return context.getManagerRole();
+		return settingsContext.getManagerRole();
 	}
 
 	@Override
@@ -37,6 +37,6 @@ public abstract class AbstractSettingsMgrPage extends T1ResizedTemplatePage impl
 	}
 
 	protected SettingsUrlsFactory getUrlsFactory() {
-		return ((ISettingsWebContext) context).getUrlsFactory();
+		return ((ISettingsWebContext) settingsContext).getUrlsFactory();
 	}
 }
