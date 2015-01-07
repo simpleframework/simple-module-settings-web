@@ -39,10 +39,10 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 		return singleton(SettingsUrlsFactory.class);
 	}
 
-	public final WebModuleFunction FUNC_MODULES_MGR = (WebModuleFunction) new WebModuleFunction()
+	public final WebModuleFunction FUNC_MODULES_MGR = (WebModuleFunction) new WebModuleFunction(this)
 			.setUrl(getUrlsFactory().getUrl(null, ModuleContextMgrPage.class))
 			.setName(MODULE_NAME + "-ModuleContextMgrPage").setText($m("SettingsWebContext.0"));
-	public final WebModuleFunction FUNC_MY_SETTINGS = (WebModuleFunction) new WebModuleFunction()
+	public final WebModuleFunction FUNC_MY_SETTINGS = (WebModuleFunction) new WebModuleFunction(this)
 			.setUrl(getUrlsFactory().getUrl(null, MySettingsTPage.class))
 			.setName(MODULE_NAME + "-MySettingsTPage").setText($m("SettingsWebContext.1"))
 			.setDisabled(true);
