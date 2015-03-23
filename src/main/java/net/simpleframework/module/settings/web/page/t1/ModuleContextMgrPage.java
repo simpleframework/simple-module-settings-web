@@ -14,7 +14,6 @@ import net.simpleframework.ctx.Module;
 import net.simpleframework.ctx.ModuleContextFactory;
 import net.simpleframework.mvc.PageMapping;
 import net.simpleframework.mvc.PageParameter;
-import net.simpleframework.mvc.common.element.ETextAlign;
 import net.simpleframework.mvc.component.ComponentParameter;
 import net.simpleframework.mvc.component.ui.pager.AbstractTablePagerHandler;
 import net.simpleframework.mvc.component.ui.pager.EPagerBarLayout;
@@ -39,18 +38,14 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 				.setPagerBarLayout(EPagerBarLayout.none).setContainerId("idModuleContextMgrPage_tbl")
 				.setHandlerClass(ContextModuleTable.class);
 		tablePager
+				.addColumn(new TablePagerColumn("name", "ID", 180).setSort(false))
 				.addColumn(
-						new TablePagerColumn("name", "ID", 180).setTextAlign(ETextAlign.left).setSort(
-								false))
-				.addColumn(
-						new TablePagerColumn("text", $m("ModuleContextMgrPage.0"), 180).setTextAlign(
-								ETextAlign.left).setSort(false))
+						new TablePagerColumn("text", $m("ModuleContextMgrPage.0"), 180).setSort(false))
 				.addColumn(new TablePagerColumn("version", $m("ModuleContextMgrPage.1"), 55))
 				.addColumn(new TablePagerColumn("order", $m("ModuleContextMgrPage.2"), 65))
 				.addColumn(
 						new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3"))
-								.setTextAlign(ETextAlign.left).setSort(false))
-				.addColumn(TablePagerColumn.OPE().setWidth(80));
+								.setSort(false)).addColumn(TablePagerColumn.OPE().setWidth(80));
 	}
 
 	@Override
