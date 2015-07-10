@@ -19,7 +19,7 @@ public abstract class AbstractSettingsMgrPage extends T1ResizedTemplatePage impl
 		ISettingsContextAware {
 
 	@Override
-	protected void onForward(final PageParameter pp) {
+	protected void onForward(final PageParameter pp) throws Exception {
 		super.onForward(pp);
 
 		pp.addImportCSS(AbstractSettingsMgrPage.class, "/settings.css");

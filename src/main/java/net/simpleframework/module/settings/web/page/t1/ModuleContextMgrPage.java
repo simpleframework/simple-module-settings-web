@@ -30,7 +30,7 @@ import net.simpleframework.mvc.component.ui.pager.TablePagerColumn;
 public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 
 	@Override
-	protected void onForward(final PageParameter pp) {
+	protected void onForward(final PageParameter pp) throws Exception {
 		super.onForward(pp);
 
 		final TablePagerBean tablePager = (TablePagerBean) addComponentBean(pp,
