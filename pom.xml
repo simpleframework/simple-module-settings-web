@@ -14,13 +14,11 @@
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-module-settings-service</artifactId>
-      <version>${simple.module.settings.service}</version>
     </dependency>
 
     <dependency>
       <groupId>net.simpleframework</groupId>
       <artifactId>simple-mvc-template</artifactId>
-      <version>${simple.mvc.template}</version>
     </dependency>
 
     <!-- web容器包 -->
