@@ -27,7 +27,7 @@ public abstract class AbstractSettingsMgrPage extends T1ResizedTemplatePage impl
 
 	@Override
 	public String getPageRole(final PageParameter pp) {
-		return settingsContext.getModule().getManagerRole();
+		return getPageManagerRole(pp);
 	}
 
 	@Override
