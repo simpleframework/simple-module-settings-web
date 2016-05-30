@@ -35,17 +35,17 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 
 		final TablePagerBean tablePager = (TablePagerBean) addComponentBean(pp,
 				"ModuleContextMgrPage_tbl", TablePagerBean.class)
-				.setPagerBarLayout(EPagerBarLayout.none).setContainerId("idModuleContextMgrPage_tbl")
-				.setHandlerClass(ContextModuleTable.class);
-		tablePager
-				.addColumn(new TablePagerColumn("name", "ID", 180).setSort(false))
+						.setPagerBarLayout(EPagerBarLayout.none)
+						.setContainerId("idModuleContextMgrPage_tbl")
+						.setHandlerClass(ContextModuleTable.class);
+		tablePager.addColumn(new TablePagerColumn("name", "ID", 180).setSort(false))
 				.addColumn(
 						new TablePagerColumn("text", $m("ModuleContextMgrPage.0"), 180).setSort(false))
 				.addColumn(new TablePagerColumn("version", $m("ModuleContextMgrPage.1"), 55))
 				.addColumn(new TablePagerColumn("order", $m("ModuleContextMgrPage.2"), 65))
-				.addColumn(
-						new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3"))
-								.setSort(false)).addColumn(TablePagerColumn.OPE(80));
+				.addColumn(new TablePagerColumn("settingsContext", $m("ModuleContextMgrPage.3"))
+						.setSort(false))
+				.addColumn(TablePagerColumn.OPE(80));
 	}
 
 	@Override

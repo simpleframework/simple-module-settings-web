@@ -1,6 +1,7 @@
 package net.simpleframework.module.settings.web;
 
 import static net.simpleframework.common.I18n.$m;
+
 import net.simpleframework.ctx.ModuleFunctions;
 import net.simpleframework.module.settings.impl.SettingsContext;
 import net.simpleframework.module.settings.web.page.MySettingsTPage;
@@ -20,21 +21,18 @@ public class SettingsWebContext extends SettingsContext implements ISettingsWebC
 
 	@Override
 	protected ModuleFunctions getFunctions() {
-		return ModuleFunctions.of(
-				new WebModuleFunction(this)
-						.setUrl(getUrlsFactory().getUrl(null, ModuleContextMgrPage.class))
-						.setName(MODULE_NAME + "-ModuleContextMgrPage")
-						.setText($m("SettingsWebContext.0")),
-				new WebModuleFunction(this)
-						.setUrl(getUrlsFactory().getUrl(null, MySettingsTPage.class))
+		return ModuleFunctions.of(new WebModuleFunction(this)
+				.setUrl(getUrlsFactory().getUrl(null, ModuleContextMgrPage.class))
+				.setName(MODULE_NAME + "-ModuleContextMgrPage").setText($m("SettingsWebContext.0")),
+				new WebModuleFunction(this).setUrl(getUrlsFactory().getUrl(null, MySettingsTPage.class))
 						.setName(MODULE_NAME + "-MySettingsTPage").setText($m("SettingsWebContext.1"))
 						.setDisabled(true));
 	}
 
 	@Override
 	public AbstractElement<?> toMyPreferencesElement(final PageParameter pp) {
-		final WebModuleFunction f = (WebModuleFunction) getFunctionByName(MODULE_NAME
-				+ "-MySettingsTPage");
+		final WebModuleFunction f = (WebModuleFunction) getFunctionByName(
+				MODULE_NAME + "-MySettingsTPage");
 		return new LinkElement(f.getText()).setHref(f.getUrl());
 	}
 
