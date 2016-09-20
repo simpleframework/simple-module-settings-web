@@ -62,7 +62,7 @@ public class ModuleContextMgrPage extends AbstractSettingsMgrPage {
 
 		@Override
 		public IDataQuery<?> createDataObjectQuery(final ComponentParameter cp) {
-			final ListDataQuery<Map<String, Object>> dq = new ListDataQuery<Map<String, Object>>();
+			final ListDataQuery<Map<String, Object>> dq = new ListDataQuery<>();
 			final List<Map<String, Object>> coll = dq.list();
 			for (final IModuleContext ctx : ModuleContextFactory.allModules()) {
 				final Module module = ctx.getModule();
